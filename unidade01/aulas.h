@@ -577,9 +577,9 @@ void questao18(void){
 
 
 void questao19(void){
-    RCC->AHB1ENR |= 1 << 0;
-    GPIOA->MODER |= (0b01 << 0);
-    GPIOA->OTYPER |= 1;
+    RCC->AHB1ENR |= 1 << 0; // liga o Clock do GPIOA
+    GPIOA->MODER |= (0b01 << 0); // pino PA0 como saída
+    GPIOA->OTYPER |= 1; // habilita o uso do relé
     
     while(1){
     GPIOA->ODR ^=(1 << 0);      // alterna o estado do pino PA0
